@@ -1,12 +1,15 @@
 package com.sample.simpsonviewer.Views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.sample.simpsonviewer.Constants
+
+import com.sample.commoncomps.SomeClass
 
 abstract class BaseActivity : AppCompatActivity(){
 
@@ -15,6 +18,7 @@ abstract class BaseActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG,"onCreate")
         super.onCreate(savedInstanceState)
+        Toast.makeText(applicationContext,""+SomeClass.somec,Toast.LENGTH_LONG).show()
         setContentView(getLayoutId())
         init()
        // mPresenter= ListFragmentPresenter(this)

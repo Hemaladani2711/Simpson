@@ -17,12 +17,10 @@ class ListAdapter(private val simpsons: Simpsons?, private val context: Context?
              var mTitle:TextView
              var mYear:TextView
         init {
-            mTitle=itemView.findViewById(R.id.titleMovie)
+            mTitle=itemView.findViewById(R.id.txtRelatedTopic)
             mYear=itemView.findViewById(R.id.Year)
         }
     }
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         Log.d(TAG,"onCreateViewHolder")
         val inflater=LayoutInflater.from(parent.context)
