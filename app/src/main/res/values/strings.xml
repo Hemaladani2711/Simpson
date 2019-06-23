@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Simpson Character Viewer</string>
+    <string name="click_to_view">Click to View the details</string>
 </resources>

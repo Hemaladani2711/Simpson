@@ -1,11 +1,12 @@
 package com.sample.simpsonviewer.Views
 
 import android.util.Log
+import com.sample.simpsonviewer.Constants
 import com.sample.simpsonviewer.R
 
 
 class ListFragmentActivity: BaseActivity() {
-    private val TAG= ListFragmentActivity::class.simpleName
+    private val TAG= Constants.TAG+ListFragmentActivity::class.simpleName
     override fun getLayoutId(): Int {
         Log.d(TAG,"getLayoutId")
         return R.layout.activity_main

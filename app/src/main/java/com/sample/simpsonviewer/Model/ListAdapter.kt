@@ -1,16 +1,19 @@
-package com.sample.simpsonviewer.Views
+package com.sample.simpsonviewer.Model
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.sample.simpsonviewer.Objects.Movie
+import com.sample.simpsonviewer.Constants
+import com.sample.simpsonviewer.Objects.Simpsons
 import com.sample.simpsonviewer.R
 
-class ListAdapter(private val list:List<Movie>):RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter(private val simpsons: Simpsons?, private val context: Context?):RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
+    private val TAG=Constants.TAG+ListAdapter::class.simpleName
     inner class ViewHolder(inflater: LayoutInflater, parent: ViewGroup): RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item,parent,false)) {
-
              var mTitle:TextView
              var mYear:TextView
         init {
@@ -21,17 +24,20 @@ class ListAdapter(private val list:List<Movie>):RecyclerView.Adapter<ListAdapter
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.d(TAG,"onCreateViewHolder")
         val inflater=LayoutInflater.from(parent.context)
         return ViewHolder(inflater,parent)
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        Log.d(TAG,"getItemCount")
+        return simpsons!!.relatedTopics!!.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.mYear.setText(list.get(position).s)
-        holder.mTitle.setText(list.get(position).i.toString())
+        Log.d(TAG,"onBindViewHolder")
+        holder.mYear.setText(context!!.getText(R.string.click_to_view))
+        holder.mTitle.setText(simpsons!!.relatedTopics!!.get(position).text)
     }
 
 

@@ -6,10 +6,11 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.sample.simpsonviewer.Constants
 
 abstract class BaseActivity : AppCompatActivity(){
 
-    private val TAG= BaseActivity::class.simpleName
+    private val TAG= Constants.TAG+BaseActivity::class.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG,"onCreate")
@@ -27,6 +28,7 @@ abstract class BaseActivity : AppCompatActivity(){
 
     /*To perform fragment transactions*/
     fun fragmentTransaction(fragment:Fragment,layoutId:Int){
+        Log.d(TAG,"fragmentTransaction")
         val fragmentManager:FragmentManager=supportFragmentManager
         val fragmentTransction:FragmentTransaction=fragmentManager.beginTransaction()
         fragmentTransction.replace(layoutId,fragment).addToBackStack(fragment::class.simpleName).commit()

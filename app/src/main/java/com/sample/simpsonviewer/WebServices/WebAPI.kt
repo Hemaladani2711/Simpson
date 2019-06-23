@@ -1,6 +1,7 @@
 package com.sample.simpsonviewer.WebServices
 
 import com.google.gson.GsonBuilder
+import com.sample.simpsonviewer.Constants
 import com.sample.simpsonviewer.Objects.Simpsons
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -10,9 +11,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 
-interface Retrofit {
+interface WebAPI {
     companion object {
-        val BASE_URL:String="http://api.duckduckgo.com/"
+        val BASE_URL:String=Constants.SIMPSONS_BASE_URL
         var longerTimeoutClient = OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
@@ -26,9 +27,8 @@ interface Retrofit {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(longerTimeoutClient)
             .build()
-        fun create(): Retrofit{
-
-            return retrofitApiInstance.create(Retrofit::class.java)
+        fun create(): WebAPI{
+            return retrofitApiInstance.create(WebAPI::class.java)
         }
 
     }
