@@ -1,11 +1,11 @@
-package com.sample.simpsonviewer.Model
+package com.sample.wireviewer.Model
 
 import android.util.Log
-import com.sample.commoncomps.WebServices.WebAPI
-import com.sample.simpsonviewer.Constants
-import com.sample.simpsonviewer.Contracts.IListFragmentContract
 import com.sample.commoncomps.Objects.Simpsons
-import com.sample.simpsonviewer.Presenters.ListFragmentPresenter
+import com.sample.commoncomps.WebServices.WebAPI
+import com.sample.wireviewer.Constants
+import com.sample.wireviewer.Contracts.IListFragmentContract
+import com.sample.wireviewer.Presenters.ListFragmentPresenter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,9 +22,9 @@ class ListFragmentModel: IListFragmentContract.IModel {
     }
     override fun fetchData(){
         Log.d(TAG,"fetchData")
-        val apiService: WebAPI = WebAPI.create()
-        val mCallGetSimpsonData=apiService.getSimpsonsData()
-        mCallGetSimpsonData.enqueue(object : Callback<Simpsons?>{
+        val apiService:WebAPI= WebAPI.create()
+        val mCallGetWireCharacters=apiService.getWireCharactersData()
+        mCallGetWireCharacters.enqueue(object : Callback<Simpsons?>{
             override fun onFailure(call: Call<Simpsons?>, t: Throwable) {
                 mPresenter.onFailure(t)
             }
@@ -36,3 +36,5 @@ class ListFragmentModel: IListFragmentContract.IModel {
         })
     }
 }
+
+

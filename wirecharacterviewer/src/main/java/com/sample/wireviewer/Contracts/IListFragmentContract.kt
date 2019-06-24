@@ -1,8 +1,8 @@
-package com.sample.simpsonviewer.Contracts
+package com.sample.wireviewer.Contracts
 
-import com.sample.simpsonviewer.Model.ListAdapter
 import com.sample.commoncomps.Objects.Simpsons
-import com.sample.simpsonviewer.Presenters.ListFragmentPresenter
+import com.sample.wireviewer.Model.ListAdapter
+import com.sample.wireviewer.Presenters.ListFragmentPresenter
 import retrofit2.Response
 
 interface IListFragmentContract {

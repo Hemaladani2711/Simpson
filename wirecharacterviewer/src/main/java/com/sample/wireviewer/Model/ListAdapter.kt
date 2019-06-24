@@ -1,4 +1,4 @@
-package com.sample.simpsonviewer.Model
+package com.sample.wireviewer.Model
 
 import android.content.Context
 import android.util.Log
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.sample.simpsonviewer.Constants
 import com.sample.commoncomps.Objects.Simpsons
-import com.sample.simpsonviewer.R
+import com.sample.wireviewer.Constants
+import com.sample.wireviewer.R
 
 class ListAdapter(private val simpsons: Simpsons?, private val context: Context?):RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 

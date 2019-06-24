@@ -1,4 +1,4 @@
-package com.sample.simpsonviewer.Views
+package com.sample.wireviewer.Views
 
 import android.os.Bundle
 import android.util.Log
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.sample.simpsonviewer.Constants
+import com.sample.wireviewer.Constants
 
 abstract class BaseFragment: Fragment() {
     private val TAG= Constants.TAG+ BaseFragment::class.simpleName

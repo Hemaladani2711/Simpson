@@ -1,8 +1,8 @@
-package com.sample.simpsonviewer.Views
+package com.sample.wireviewer.Views
 
 import android.util.Log
-import com.sample.simpsonviewer.Constants
-import com.sample.simpsonviewer.R
+import com.sample.wireviewer.Constants
+import com.sample.wireviewer.R
 
 
 class ListFragmentActivity: BaseActivity() {

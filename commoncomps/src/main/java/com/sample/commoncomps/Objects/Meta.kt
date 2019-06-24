@@ -1,4 +1,4 @@
-package com.sample.simpsonviewer.Objects
+package com.sample.commoncomps.Objects
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

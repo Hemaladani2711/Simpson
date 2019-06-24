@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Wire Character Viewer</string>
+  <string name="click_to_view">Click to View Details</string>
 </resources>

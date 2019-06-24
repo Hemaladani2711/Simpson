@@ -1,11 +1,11 @@
-package com.sample.simpsonviewer.Presenters
+package com.sample.wireviewer.Presenters
 
 import android.content.Context
 import android.util.Log
-import com.sample.simpsonviewer.Constants
-import com.sample.simpsonviewer.Contracts.IListFragmentContract
-import com.sample.simpsonviewer.Model.ListAdapter
 import com.sample.commoncomps.Objects.Simpsons
+import com.sample.wireviewer.Constants
+import com.sample.wireviewer.Contracts.IListFragmentContract
+import com.sample.wireviewer.Model.ListAdapter
 import retrofit2.Response
 
 class ListFragmentPresenter(
