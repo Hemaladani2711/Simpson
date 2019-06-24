@@ -2,5 +2,5 @@
 Used MVP, Kotlin, Retrofit to download and process data.
 
 **************ToDo Items:**************
-Search List
-Item Detail view
+1. Search List
+2. Item Detail view
