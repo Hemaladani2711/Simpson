@@ -10,9 +10,10 @@ import com.sample.simpsonviewer.Constants
 import com.sample.commoncomps.Objects.Simpsons
 import com.sample.simpsonviewer.R
 
-class ListAdapter(private val simpsons: Simpsons?, private val context: Context?):RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter(private var simpsons: Simpsons?, private val context: Context?):RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     private val TAG=Constants.TAG+ListAdapter::class.simpleName
+    var simpsonsCopy:Simpsons?
     inner class ViewHolder(inflater: LayoutInflater, parent: ViewGroup): RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item,parent,false)) {
              var mTitle:TextView
              var mYear:TextView
@@ -20,6 +21,9 @@ class ListAdapter(private val simpsons: Simpsons?, private val context: Context?
             mTitle=itemView.findViewById(R.id.txtRelatedTopic)
             mYear=itemView.findViewById(R.id.Year)
         }
+    }
+    init {
+        simpsonsCopy=simpsons
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         Log.d(TAG,"onCreateViewHolder")
@@ -38,6 +42,16 @@ class ListAdapter(private val simpsons: Simpsons?, private val context: Context?
         holder.mTitle.setText(simpsons!!.relatedTopics!!.get(position).text)
     }
 
+    /*fun filter(search:String){
+        simpsons.relatedTopics
+        if(search.isEmpty()){
+            simpsons=simpsonsCopy
+        }else{
+
+        }
+
+    }
+*/
 
 
 }

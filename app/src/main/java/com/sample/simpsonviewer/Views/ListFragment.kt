@@ -3,6 +3,7 @@ package com.sample.simpsonviewer.Views
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sample.simpsonviewer.Constants
@@ -17,17 +18,20 @@ class ListFragment: BaseFragment(),IListFragmentContract.IView{
     lateinit var mPresenter:ListFragmentPresenter
     lateinit var recyclerView: RecyclerView
     lateinit var txtDataNotAvailable:TextView
+    lateinit var searchView: SearchView
 
     override fun onDataFailed() {
         Log.d(TAG,"onDataFailed")
         txtDataNotAvailable.visibility=View.VISIBLE
         recyclerView.visibility=View.GONE
+        searchView.visibility=View.GONE
     }
 
     override fun onDataReceived(adapter: ListAdapter) {
         Log.d(TAG,"onDataReceived")
         txtDataNotAvailable.visibility=View.GONE
         recyclerView.visibility=View.VISIBLE
+        searchView.visibility=View.VISIBLE
         recyclerView.layoutManager=LinearLayoutManager(context)
         recyclerView.adapter=adapter
     }
@@ -41,6 +45,9 @@ class ListFragment: BaseFragment(),IListFragmentContract.IView{
         Log.d(TAG,"init")
         recyclerView=view.findViewById(R.id.recyclerView)
         txtDataNotAvailable=view.findViewById(R.id.txtDataNotAvailable)
+        searchView=view.findViewById(R.id.searchView)
         mPresenter= ListFragmentPresenter(this,ListFragmentModel(),context)
     }
+
+
 }
